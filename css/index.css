@@ -23,10 +23,13 @@ body {
 }
 
 .nav {
+    margin: 10px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     /* border: solid 1px black; */
+    position: fixed;
+    width: 100%;
 }
 
 .opcoes_nav {
@@ -40,6 +43,38 @@ body {
     font-size: 120%;
     text-decoration: none;
     color: white;
+}
+
+.opcoes_nav {
+    float: left;
+    margin: 20px;
+    padding: 20px 30px;
+}
+
+.opcoes_nav a{
+    position: relative;
+    color: rgb(0, 0, 0);
+}
+
+.opcoes_nav a:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0);
+    visibility: hidden;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transition: all 0.3s ease-in-out 0s;
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.opcoes_nav a:hover:before {
+    visibility: visible;
+    -webkit-transform: scaleX(1);
+    transform: scaleX(1);
 }
 
 .pag1 .titulo {
@@ -64,14 +99,14 @@ body {
     font-weight: bold;
 }
 
-.btn_cadastro_login {
+.pgn1 .button {
     width: 60%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.pgn1_btn {
+.pgn1 .button {
     width: 30vh;
     height: 8vh;
     display: flex;
@@ -82,12 +117,45 @@ body {
     /* border: solid 1px yellow; */
 }
 
-.pgn1_btn a {
+.pgn1 .button a {
     font-size: 200%;
     text-decoration: none;
     color: aliceblue;
     font-family: 'Montserrat', sans-serif;
 }
+
+.pag1 .texto .button {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    padding: 16px 32px;
+    transition-duration: 0.4s;
+}
+
+.pag1 .texto .button a {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.pag1 .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(56, 56, 56);
+  }
+
+
+
+
+
+
+
+
+
+
+
 
 .pag2 {
     background-color: aliceblue;
@@ -128,13 +196,13 @@ body {
 }
 
 .pag2 .texto .button {
-    width: 20%;
-    height: 30vh;
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 4px;
+    padding: 16px 32px;
+    transition-duration: 0.4s;
 }
 
 .pag2 .texto .button a {
@@ -143,6 +211,12 @@ body {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
 }
+
+.pag2 .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    background-color: rgb(56, 56, 56);
+  }
+  
 
 .pag4 {
     background-color: aliceblue;
@@ -207,8 +281,8 @@ body {
 }
 
 .pag5 {
-background-color: aliceblue;
-/* border: solid 1px black; */
+    background-color: aliceblue;
+    /* border: solid 1px black; */
 }
 
 .pag5 .avaliacao {
@@ -220,7 +294,7 @@ background-color: aliceblue;
     /* border: solid 1px black; */
 }
 
-.pag5 .avaliacao .titulo{
+.pag5 .avaliacao .titulo {
     font-size: 350%;
     /* border: solid 1px black; */
     font-family: 'Poppins', sans-serif;
@@ -328,98 +402,116 @@ background-color: aliceblue;
 }
 
 :root {
-	--omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
-	--omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
-	--omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
-	--omrs-color-interaction: #1e4bd1;
-	--omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
-	--omrs-color-danger: #b50706;
-	--omrs-color-bg-low-contrast: #eff1f2;
-	--omrs-color-ink-high-contrast: #121212;
-	--omrs-color-bg-high-contrast: #ffffff;
-	
+    --omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
+    --omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
+    --omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
+    --omrs-color-interaction: #1e4bd1;
+    --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
+    --omrs-color-danger: #b50706;
+    --omrs-color-bg-low-contrast: #eff1f2;
+    --omrs-color-ink-high-contrast: #121212;
+    --omrs-color-bg-high-contrast: #ffffff;
+
 }
+
 /** END: Non Openmrs CSS **/
 div.omrs-input-group {
-  margin-bottom: 1.5rem;
-  position: relative;
-  width: 20.4375rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    width: 20.4375rem;
 }
 
 /* Input*/
-.omrs-input-underlined > input,
-.omrs-input-filled > input {
-	border: none;
-	border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
-	width: 100%;
-	height: 2rem;
-	font-size: 1.0625rem;
-	padding-left: 0.875rem;
-	line-height: 147.6%;
-	padding-top: 0.825rem;
-	padding-bottom: 0.5rem;
+.omrs-input-underlined>input,
+.omrs-input-filled>input {
+    border: none;
+    border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
+    width: 100%;
+    height: 2rem;
+    font-size: 1.0625rem;
+    padding-left: 0.875rem;
+    line-height: 147.6%;
+    padding-top: 0.825rem;
+    padding-bottom: 0.5rem;
 }
 
-.omrs-input-underlined > input:focus,
-.omrs-input-filled > input:focus {
-	outline: none;
+.omrs-input-underlined>input:focus,
+.omrs-input-filled>input:focus {
+    outline: none;
 }
 
-.omrs-input-underlined > .omrs-input-label,
-.omrs-input-filled > .omrs-input-label {
-	position: absolute;
-	top: 0.9375rem;
-	left: 0.875rem;
-	line-height: 147.6%;
-	color: var(--omrs-color-ink-medium-contrast);
-	transition: top .2s;
+.omrs-input-underlined>.omrs-input-label,
+.omrs-input-filled>.omrs-input-label {
+    position: absolute;
+    top: 0.9375rem;
+    left: 0.875rem;
+    line-height: 147.6%;
+    color: var(--omrs-color-ink-medium-contrast);
+    transition: top .2s;
 }
 
-.omrs-input-underlined > svg,
-.omrs-input-filled > svg {
-	position: absolute;
-	top: 0.9375rem;
-	right: 0.875rem;
-	fill: var(--omrs-color-ink-medium-contrast);
+.omrs-input-underlined>svg,
+.omrs-input-filled>svg {
+    position: absolute;
+    top: 0.9375rem;
+    right: 0.875rem;
+    fill: var(--omrs-color-ink-medium-contrast);
 }
 
-.omrs-input-underlined > .omrs-input-helper,
-.omrs-input-filled > .omrs-input-helper {
-	font-size: 0.9375rem;
-	color: var(--omrs-color-ink-medium-contrast);
-	letter-spacing: 0.0275rem;
-	margin: 0.125rem 0.875rem;
+.omrs-input-underlined>.omrs-input-helper,
+.omrs-input-filled>.omrs-input-helper {
+    font-size: 0.9375rem;
+    color: var(--omrs-color-ink-medium-contrast);
+    letter-spacing: 0.0275rem;
+    margin: 0.125rem 0.875rem;
 }
 
-.omrs-input-underlined > input:hover,
-.omrs-input-filled > input:hover {
-	background: var(--omrs-color-interaction-minus-two);
-	border-color: var(--omrs-color-ink-high-contrast);
+.omrs-input-underlined>input:hover,
+.omrs-input-filled>input:hover {
+    background: var(--omrs-color-interaction-minus-two);
+    border-color: var(--omrs-color-ink-high-contrast);
 }
 
-.omrs-input-underlined > input:focus + .omrs-input-label,
-.omrs-input-underlined > input:valid + .omrs-input-label,
-.omrs-input-filled > input:focus + .omrs-input-label,
-.omrs-input-filled > input:valid + .omrs-input-label {
-	top: 0;
-	font-size: 0.9375rem;
-	margin-bottom: 32px;;
+.omrs-input-underlined>input:focus+.omrs-input-label,
+.omrs-input-underlined>input:valid+.omrs-input-label,
+.omrs-input-filled>input:focus+.omrs-input-label,
+.omrs-input-filled>input:valid+.omrs-input-label {
+    top: 0;
+    font-size: 0.9375rem;
+    margin-bottom: 32px;
+    ;
 }
 
-.omrs-input-underlined:not(.omrs-input-danger) > input:focus + .omrs-input-label,
-.omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label {
-	color: var(--omrs-color-interaction);
+.omrs-input-underlined:not(.omrs-input-danger)>input:focus+.omrs-input-label,
+.omrs-input-filled:not(.omrs-input-danger)>input:focus+.omrs-input-label {
+    color: var(--omrs-color-interaction);
 }
 
-.omrs-input-underlined:not(.omrs-input-danger) > input:focus,
-.omrs-input-filled:not(.omrs-input-danger) > input:focus {
-	border-color: var(--omrs-color-interaction);
+.omrs-input-underlined:not(.omrs-input-danger)>input:focus,
+.omrs-input-filled:not(.omrs-input-danger)>input:focus {
+    border-color: var(--omrs-color-interaction);
 }
 
-.omrs-input-underlined:not(.omrs-input-danger) > input:focus ~ svg,
-.omrs-input-filled:not(.omrs-input-danger) > input:focus ~ svg {
-	fill: var(--omrs-color-ink-high-contrast);
+.omrs-input-underlined:not(.omrs-input-danger)>input:focus~svg,
+.omrs-input-filled:not(.omrs-input-danger)>input:focus~svg {
+    fill: var(--omrs-color-ink-high-contrast);
 }
 
+footer {
+    justify-content: flex-end;
+    background-color: white;
+}
 
+.desenvolvedor {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid 1px blue; */
+}
 
+.contatos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: solid 1px blue; */
+}
