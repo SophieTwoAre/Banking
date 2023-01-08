@@ -51,7 +51,7 @@ body {
     padding: 20px 30px;
 }
 
-.opcoes_nav a{
+.opcoes_nav a {
     position: relative;
     color: rgb(0, 0, 0);
 }
@@ -95,18 +95,18 @@ body {
 .frase p {
     font-size: 775%;
     font-family: 'Poppins', sans-serif;
-    color: whitesmoke;
+    color: darkgray;
     font-weight: bold;
 }
 
-.pgn1 .button {
+.btn_cadastro_login {
     width: 60%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.pgn1 .button {
+.pgn1_btn {
     width: 30vh;
     height: 8vh;
     display: flex;
@@ -114,46 +114,47 @@ body {
     align-items: center;
     background-color: black;
     border-radius: 4px;
-    /* border: solid 1px yellow; */
+    /* border: solid 1px red; */
+    cursor: pointer;
 }
 
-.pgn1 .button a {
+.pgn1_btn2 {
+    width: 30vh;
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    border-radius: 4px;
+    /* border: solid 1px red; */
+    cursor: pointer;
+}
+
+.pag1 .pgn1_btn:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(56, 56, 56);
+    transition-duration: 0.4s;
+}
+
+.pag1 .pgn1_btn2:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(56, 56, 56);
+    transition-duration: 0.4s;
+}
+
+.pgn1_btn a {
     font-size: 200%;
     text-decoration: none;
     color: aliceblue;
     font-family: 'Montserrat', sans-serif;
 }
 
-.pag1 .texto .button {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    padding: 16px 32px;
-    transition-duration: 0.4s;
-}
-
-.pag1 .texto .button a {
-    font-size: 25px;
-    color: white;
+.pgn1_btn2 a {
+    font-size: 200%;
     text-decoration: none;
+    color: aliceblue;
     font-family: 'Montserrat', sans-serif;
 }
-
-.pag1 .button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
-    background-color: rgb(56, 56, 56);
-  }
-
-
-
-
-
-
-
-
-
 
 
 
@@ -201,8 +202,8 @@ body {
     justify-content: center;
     align-items: center;
     border-radius: 4px;
+    /* color: white; */
     padding: 16px 32px;
-    transition-duration: 0.4s;
 }
 
 .pag2 .texto .button a {
@@ -213,10 +214,15 @@ body {
 }
 
 .pag2 .button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
     background-color: rgb(56, 56, 56);
-  }
-  
+    transition-duration: 0.4s;
+}
+
+
+
+
+
 
 .pag4 {
     background-color: aliceblue;
@@ -234,6 +240,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.grid{
+    border-radius: 10px;
 }
 
 .pag4 .galeria .titulo {
@@ -268,8 +278,8 @@ body {
     border-radius: 4px;
     justify-content: center;
     align-items: center;
-    width: 20%;
-    height: 8%;
+    width: 17%;
+    height: 7%;
     background-color: black;
 }
 
@@ -279,6 +289,37 @@ body {
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
 }
+
+.pag4 .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(56, 56, 56);
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.grid{
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    /* border: 2px solid #000; */
+ }
+ 
+ .grid{
+    width: 100%;
+    height: 100%;
+    -webkit-transition: -webkit-transform .5s ease;
+    transition: transform .5s ease;
+ }
+ 
+ .grid:hover{
+    -webkit-transform: scale(1.1);
+    transform: scale(1.1);
+ }
+
+
+
+
+
 
 .pag5 {
     background-color: aliceblue;
@@ -401,6 +442,13 @@ body {
     font-family: 'Montserrat', sans-serif;
 }
 
+.pag6 .button:hover {
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgb(56, 56, 56);
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
 :root {
     --omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
     --omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
@@ -499,7 +547,7 @@ div.omrs-input-group {
 
 footer {
     justify-content: flex-end;
-    background-color: white;
+    background-color: aliceblue;
 }
 
 .desenvolvedor {
