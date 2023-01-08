@@ -1,565 +1,569 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@900&display=swap');
-
-/* font-family: 'Montserrat', sans-serif;
-font-family: 'Poppins', sans-serif; */
+html {
+  scroll-behavior: smooth;
+}
 
 * {
-    margin: 0;
+  margin: 0;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
-    padding: 0;
-    margin: 0;
-    background-image: url("../assets/imagem.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  font-family: "Montserrat", sans-serif;
+  padding: 0;
+  margin: 0;
+  background-image: url("../assets/imagem.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
-.pag1 {
-    /* height: 100%; */
-    width: 100%;
+:root {
+  --omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
+  --omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
+  --omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
+  --omrs-color-interaction: #1e4bd1;
+  --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
+  --omrs-color-danger: #b50706;
+  --omrs-color-bg-low-contrast: #eff1f2;
+  --omrs-color-ink-high-contrast: #121212;
+  --omrs-color-bg-high-contrast: #ffffff;
 }
 
-.nav {
-    margin: 10px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    /* border: solid 1px black; */
-    position: fixed;
-    width: 100%;
+.titulo-simples,
+.pag6 .fale .titulo,
+.pag5 .avaliacao .titulo,
+.pag4 .galeria .titulo,
+.pag2 .texto .titulo {
+  font-size: 350%;
+  font-family: "Poppins", sans-serif;
 }
+
+.flex-basico,
+.pag6 .fale,
+.pag5 .avaliacao,
+.pag2 .texto,
+.pag1 .titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.flex-center,
+.pag4,
+.pag2,
+.pag1 .titulo .frase .btn_cadastro_login .pgn1_btn,
+.pag1 header .nav .opcoes_nav .box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-hover,
+.pag6 .fale .button button:hover,
+.pag4 .galeria .button button:hover,
+.pag2 .texto .button button:hover {
+   box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgb(103, 103, 103);
+  transition-duration: 0.4s;
+}
+
+.button-simples,
+.pag6 .fale .button button,
+.pag4 .galeria .button button,
+.pag2 .texto .button button {
+  width: 100%;
+  height: 100%;
+  font-size: 25px;
+  background-color: #121212;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* @keyframes button-animation {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0.6;
+  }
+} */
 
 .opcoes_nav {
-    /* border: solid 1px blue; */
-    width: 70%;
-    display: flex;
-    justify-content: space-around;
+  float: left;
+  /* margin: 20px; */
+  /* padding: 20px 30px; */
 }
 
 .opcoes_nav a {
-    font-size: 120%;
-    text-decoration: none;
-    color: white;
-}
-
-.opcoes_nav {
-    float: left;
-    margin: 20px;
-    padding: 20px 30px;
-}
-
-.opcoes_nav a {
-    position: relative;
-    color: rgb(0, 0, 0);
+  position: relative;
+  color: rgb(0, 0, 0);
+  width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .opcoes_nav a:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: rgb(0, 0, 0);
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(0, 0, 0);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
 }
 
 .opcoes_nav a:hover:before {
-    visibility: visible;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
 }
+
+.pag1 {
+  width: 100%;
+}
+
+.pag1 header .nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* border: solid 1px blue; */
+}
+
+.pag1 header .nav .opcoes_nav {
+  width: 78%;
+  display: flex;
+  justify-content: space-around;
+  /* border: solid 1px blue; */
+}
+
+.pag1 header .nav .opcoes_nav a {
+  font-size: 120%;
+  text-decoration: none;
+  color: rgb(54, 53, 53);
+  /* border: solid 1px blue; */
+}
+
+/* .pag1 header .nav .opcoes_nav .box {
+  height: 5vh;
+  width: 17%;
+} */
 
 .pag1 .titulo {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
+  height: 100vh;
 }
 
-.titulo .frase {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
+.pag1 .titulo .frase {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
 }
 
-.frase p {
-    font-size: 775%;
-    font-family: 'Poppins', sans-serif;
-    color: darkgray;
-    font-weight: bold;
+.pag1 .titulo .frase p {
+  font-size: 775%;
+  font-family: "Poppins", sans-serif;
+  color: darkgray;
+  font-weight: bold;
 }
 
 .btn_cadastro_login {
-    width: 60%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .pgn1_btn {
-    width: 30vh;
-    height: 8vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    border-radius: 4px;
-    /* border: solid 1px red; */
-    cursor: pointer;
+  width: 30vh;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 4px;
+  /* border: solid 1px red; */
+  cursor: pointer;
+  border: none;
 }
 
 .pgn1_btn2 {
-    width: 30vh;
-    height: 8vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: black;
-    border-radius: 4px;
-    /* border: solid 1px red; */
-    cursor: pointer;
+  width: 30vh;
+  height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border-radius: 4px;
+  /* border: solid 1px red; */
+  cursor: pointer;
+  border: none;
 }
 
 .pag1 .pgn1_btn:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgb(56, 56, 56);
-    transition-duration: 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgb(103, 103, 103);
+  transition-duration: 0.4s;
 }
 
 .pag1 .pgn1_btn2:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgb(56, 56, 56);
-    transition-duration: 0.4s;
+  box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  background-color: rgb(103, 103, 103);
+  transition-duration: 0.4s;
 }
 
 .pgn1_btn a {
-    font-size: 200%;
-    text-decoration: none;
-    color: aliceblue;
-    font-family: 'Montserrat', sans-serif;
+  font-size: 200%;
+  text-decoration: none;
+  color: aliceblue;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .pgn1_btn2 a {
-    font-size: 200%;
-    text-decoration: none;
-    color: aliceblue;
-    font-family: 'Montserrat', sans-serif;
+  font-size: 200%;
+  text-decoration: none;
+  color: aliceblue;
+  font-family: 'Montserrat', sans-serif;
 }
 
+/* .pag1 .titulo .frase .btn_cadastro_login {
+  width: 60%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+.pag1 .titulo .frase .btn_cadastro_login .pgn1_btn {
+  width: 30vh;
+  height: 8vh;
+  background-color: black;
+  border-radius: 4px;
+  color: aliceblue;
+  font-size: 200%;
+  border: none;
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+}
+
+.pag1 .titulo .frase .btn_cadastro_login .pgn1_btn a {
+  text-decoration: none;
+  color: white;
+}
+
+.pag1 .titulo .frase .btn_cadastro_login .pgn1_btn a:hover {
+  color: #121212;
+}
+
+.pag1 .titulo .frase .btn_cadastro_login .pgn1_btn:hover {
+  opacity: 0.6;
+  background-color: white;
+  color: #121212;
+  animation: button-animation 0.6s;
+} */
 
 .pag2 {
-    background-color: aliceblue;
-    height: 80vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: aliceblue;
+  height: 80vh;
+  width: 100%;
 }
 
 .pag2 .texto {
-    /* border: solid 1px black; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 68%;
-    height: 45vh;
-
-}
-
-.pag2 .texto .titulo {
-    font-size: 350%;
-    /* border: solid 1px black; */
-    font-family: 'Poppins', sans-serif;
+  width: 68%;
+  height: 45vh;
 }
 
 .pag2 .texto .text {
-    margin-top: 3vh;
-    margin-bottom: 3vh;
-    font-size: 190%;
-    text-align: center;
-    /* border: solid 1px black; */
+  margin-top: 3vh;
+  margin-bottom: 3vh;
+  font-size: 190%;
+  text-align: center;
 }
 
 .pag2 .texto .text p {
-    color: rgba(0, 0, 0, 0.672);
+  color: rgba(0, 0, 0, 0.672);
 }
 
 .pag2 .texto .button {
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    /* color: white; */
-    padding: 16px 32px;
+  width: 20%;
+  height: 30vh;
 }
-
-.pag2 .texto .button a {
-    font-size: 25px;
-    color: white;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.pag2 .button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgb(56, 56, 56);
-    transition-duration: 0.4s;
-}
-
-
-
-
-
 
 .pag4 {
-    background-color: aliceblue;
-    height: 115vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: solid 1px black; */
+  background-color: aliceblue;
+  height: 115vh;
 }
 
 .pag4 .galeria {
-    /* border: solid 1px black; */
-    height: 100%;
-    width: 80%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-.grid{
-    border-radius: 10px;
-}
-
-.pag4 .galeria .titulo {
-    font-size: 350%;
-    font-family: 'Poppins', sans-serif;
-    /* border: solid 1px black; */
+  height: 100%;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .pag4 .galeria .imagem {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    width: 100%;
-    display: grid;
-    grid-template-columns: 23% 23% 23% 23%;
-    gap: 1vh;
-    height: 80vh;
-    /* border: solid 1px black; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 23% 23% 23% 23%;
+  gap: 1vh;
+  height: 80vh;
 }
 
 .pag4 .galeria .imagem .grid {
-    background-image: url("../assets/abstract-image-of-colored-paper-creating-horizontal-lines.jpg");
-    background-size: cover;
-    width: 100%;
-    height: 90%;
-    /* border: solid 1px black; */
-    box-shadow: 6px 4px 3px rgba(0, 0, 0, 0.226);
+  background-image: url("../assets/abstract-image-of-colored-paper-creating-horizontal-lines.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 90%;
+  box-shadow: 6px 4px 3px rgba(0, 0, 0, 0.226);
+  border-radius: 5px;
 }
 
 .pag4 .galeria .button {
-    display: flex;
-    border-radius: 4px;
-    justify-content: center;
-    align-items: center;
-    width: 17%;
-    height: 7%;
-    background-color: black;
-}
-
-.pag4 .galeria .button a {
-    font-size: 25px;
-    color: white;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-}
-
-.pag4 .button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgb(56, 56, 56);
-    transition-duration: 0.4s;
-    cursor: pointer;
+  width: 20%;
+  height: 8%;
 }
 
 .grid{
-    width: 300px;
-    height: 200px;
-    overflow: hidden;
-    /* border: 2px solid #000; */
- }
- 
- .grid{
-    width: 100%;
-    height: 100%;
-    -webkit-transition: -webkit-transform .5s ease;
-    transition: transform .5s ease;
- }
- 
- .grid:hover{
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
- }
+  width: 300px;
+  height: 200px;
+  overflow: hidden;
+  /* border: 2px solid #000; */
+}
 
+.grid{
+  width: 100%;
+  height: 100%;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+}
 
+.grid:hover{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
 
 
 
 
 .pag5 {
-    background-color: aliceblue;
-    /* border: solid 1px black; */
+  background-color: aliceblue;
 }
 
 .pag5 .avaliacao {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    /* border: solid 1px black; */
-}
-
-.pag5 .avaliacao .titulo {
-    font-size: 350%;
-    /* border: solid 1px black; */
-    font-family: 'Poppins', sans-serif;
+  height: 100vh;
 }
 
 .pag5 .avaliacao .caixa {
-    display: flex;
-    justify-content: space-around;
-    width: 60%;
-    gap: 10px;
+  display: flex;
+  justify-content: space-around;
+  width: 75%;
+  gap: 10px;
+  /* border: 2px solid #000; */
 }
 
 .pag5 .avaliacao .box {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    height: 60vh;
-    box-shadow: 6px 4px 3px rgba(0, 0, 0, 0.226);
-    /* border: solid 1px black; */
+  margin: 4vh;
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  height: 90%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 5px;
 }
 
 .pag5 .avaliacao .box .image {
-    display: flex;
-    justify-content: center;
-    /* border: solid 1px black; */
+  display: flex;
+  justify-content: center;
+  margin: 7px;
 }
 
 .pag5 .avaliacao .box .image img {
-    width: 40%;
-    height: 40%;
-    border-radius: 100%;
-}
-
-.pag5 .avaliacao .box .texto {
-    text-align: center;
-    color: rgba(0, 0, 0, 0.606);
-    /* border: solid 1px black; */
-    font-family: 'Montserrat', sans-serif;
-    font-size: 180%;
+  width: 40%;
+  height: 70%;
+  border-radius: 100%;
 }
 
 .pag5 .avaliacao .box .nome {
-    margin: 10px;
-    font-size: 180%;
-    display: flex;
-    color: rgba(0, 0, 0, 0.83);
-    justify-content: center;
-    /* border: solid 1px black; */
-    font-family: 'Montserrat', sans-serif;
+  margin: 10px;
+  font-size: 180%;
+  display: flex;
+  color: rgba(0, 0, 0, 0.83);
+  justify-content: center;
+  font-family: "Montserrat", sans-serif;
 }
 
+.pag5 .avaliacao .box .texto {
+  margin: 2vh;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.606);
+  font-family: "Montserrat", sans-serif;
+  font-size: 180%;
+}
+
+.box{
+  overflow: hidden;
+  -webkit-transition: -webkit-transform .5s ease;
+  transition: transform .5s ease;
+  /* border: 2px solid #000; */
+}
+
+.box:hover{
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+
+
+
 .pag6 {
-    background-color: aliceblue;
+  background-color: aliceblue;
 }
 
 .pag6 .fale {
-    height: 70vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-self: center;
-    /* border: solid 1px black; */
-}
-
-.pag6 .fale .titulo {
-    font-size: 350%;
-    font-family: 'Poppins', sans-serif;
-    /* border: solid 1px black; */
+  height: 60vh;
 }
 
 .pag6 .fale .texto {
-    text-align: center;
-    color: rgba(0, 0, 0, 0.606);
-    margin: 4vh;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 160%;
-    font-family: 'Montserrat', sans-serif;
-    /* border: solid 1px black; */
+  text-align: center;
+  color: rgba(0, 0, 0, 0.606);
+  margin: 4vh;
+  font-family: "Montserrat", sans-serif;
+  font-size: 160%;
 }
 
 .pag6 .fale .input {
-    display: flex;
-    flex-direction: column;
-    width: 50%;
-    border: solid 1px black;
-    height: 40vh;
+  width: 50%;
+  height: 70vh;
+}
+
+.pag6 .fale .input form {
+  height: 30vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  /** END: Non Openmrs CSS **/
+  /* Input*/
+}
+
+.pag6 .fale .input form div.omrs-input-group {
+  /* margin-bottom: 1.5rem; */
+  position: relative;
+  width: 100%;
+}
+
+.pag6 .fale .input form .omrs-input-underlined>input,
+.pag6 .fale .input form .omrs-input-filled>input {
+  border: none;
+  border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
+  width: 99.5%;
+  font-size: 1.0625rem;
+  line-height: 147.6%;
+  padding-top: 0.825rem;
+  padding-bottom: 0.5rem;
+}
+
+.pag6 .fale .input form .omrs-input-underlined>input:focus,
+.pag6 .fale .input form .omrs-input-filled>input:focus {
+  outline: none;
+}
+
+.pag6 .fale .input form .omrs-input-underlined>.omrs-input-label,
+.pag6 .fale .input form .omrs-input-filled>.omrs-input-label {
+  position: absolute;
+  top: 0.9375rem;
+  left: 0.875rem;
+  line-height: 147.6%;
+  color: var(--omrs-color-ink-medium-contrast);
+  transition: top 0.2s;
+}
+
+.pag6 .fale .input form .omrs-input-underlined>svg,
+.pag6 .fale .input form .omrs-input-filled>svg {
+  position: absolute;
+  top: 0.9375rem;
+  right: 0.875rem;
+  fill: var(--omrs-color-ink-medium-contrast);
+}
+
+.pag6 .fale .input form .omrs-input-underlined>.omrs-input-helper,
+.pag6 .fale .input form .omrs-input-filled>.omrs-input-helper {
+  font-size: 0.9375rem;
+  color: var(--omrs-color-ink-medium-contrast);
+  letter-spacing: 0.0275rem;
+  margin: 0.125rem 0.875rem;
+}
+
+.pag6 .fale .input form .omrs-input-underlined>input:hover,
+.pag6 .fale .input form .omrs-input-filled>input:hover {
+  background: var(--omrs-color-interaction-minus-two);
+  border-color: var(--omrs-color-ink-high-contrast);
+}
+
+.pag6 .fale .input form .omrs-input-underlined>input:focus+.omrs-input-label,
+.pag6 .fale .input form .omrs-input-underlined>input:valid+.omrs-input-label,
+.pag6 .fale .input form .omrs-input-filled>input:focus+.omrs-input-label,
+.pag6 .fale .input form .omrs-input-filled>input:valid+.omrs-input-label {
+  top: 0;
+  font-size: 0.9375rem;
+  margin-bottom: 32px;
+}
+
+.pag6 .fale .input form .omrs-input-underlined:not(.omrs-input-danger)>input:focus+.omrs-input-label,
+.pag6 .fale .input form .omrs-input-filled:not(.omrs-input-danger)>input:focus+.omrs-input-label {
+  color: var(--omrs-color-interaction);
+}
+
+.pag6 .fale .input form .omrs-input-underlined:not(.omrs-input-danger)>input:focus,
+.pag6 .fale .input form .omrs-input-filled:not(.omrs-input-danger)>input:focus {
+  border-color: var(--omrs-color-interaction);
+}
+
+.pag6 .fale .input form .omrs-input-underlined:not(.omrs-input-danger)>input:focus~svg,
+.pag6 .fale .input form .omrs-input-filled:not(.omrs-input-danger)>input:focus~svg {
+  fill: var(--omrs-color-ink-high-contrast);
 }
 
 .pag6 .fale .button {
-    width: 50%;
-    height: 5vh;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    /* border: solid 1px black; */
+  width: 50%;
+  height: 15vh;
+  margin: 2vh;
 }
 
-.pag6 .fale .button a {
-    font-size: 25px;
-    color: white;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
+.pag7 {
+  height: 20vh;
+  background-color: aliceblue;
+  display: flex;
+  justify-content: space-around;
 }
 
-.pag6 .button:hover {
-    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
-    background-color: rgb(56, 56, 56);
-    transition-duration: 0.4s;
-    cursor: pointer;
+.pag7 .imagem {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-:root {
-    --omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
-    --omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
-    --omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
-    --omrs-color-interaction: #1e4bd1;
-    --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
-    --omrs-color-danger: #b50706;
-    --omrs-color-bg-low-contrast: #eff1f2;
-    --omrs-color-ink-high-contrast: #121212;
-    --omrs-color-bg-high-contrast: #ffffff;
-
+.pag7 .contatos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
-/** END: Non Openmrs CSS **/
-div.omrs-input-group {
-    margin-bottom: 1.5rem;
-    position: relative;
-    width: 20.4375rem;
+.pag7 .contatos a .pag7 .contatos a {
+  font-size: 100%;
+  font-family: "Montserrat", sans-serif;
 }
 
-/* Input*/
-.omrs-input-underlined>input,
-.omrs-input-filled>input {
-    border: none;
-    border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
-    width: 100%;
-    height: 2rem;
-    font-size: 1.0625rem;
-    padding-left: 0.875rem;
-    line-height: 147.6%;
-    padding-top: 0.825rem;
-    padding-bottom: 0.5rem;
-}
-
-.omrs-input-underlined>input:focus,
-.omrs-input-filled>input:focus {
-    outline: none;
-}
-
-.omrs-input-underlined>.omrs-input-label,
-.omrs-input-filled>.omrs-input-label {
-    position: absolute;
-    top: 0.9375rem;
-    left: 0.875rem;
-    line-height: 147.6%;
-    color: var(--omrs-color-ink-medium-contrast);
-    transition: top .2s;
-}
-
-.omrs-input-underlined>svg,
-.omrs-input-filled>svg {
-    position: absolute;
-    top: 0.9375rem;
-    right: 0.875rem;
-    fill: var(--omrs-color-ink-medium-contrast);
-}
-
-.omrs-input-underlined>.omrs-input-helper,
-.omrs-input-filled>.omrs-input-helper {
-    font-size: 0.9375rem;
-    color: var(--omrs-color-ink-medium-contrast);
-    letter-spacing: 0.0275rem;
-    margin: 0.125rem 0.875rem;
-}
-
-.omrs-input-underlined>input:hover,
-.omrs-input-filled>input:hover {
-    background: var(--omrs-color-interaction-minus-two);
-    border-color: var(--omrs-color-ink-high-contrast);
-}
-
-.omrs-input-underlined>input:focus+.omrs-input-label,
-.omrs-input-underlined>input:valid+.omrs-input-label,
-.omrs-input-filled>input:focus+.omrs-input-label,
-.omrs-input-filled>input:valid+.omrs-input-label {
-    top: 0;
-    font-size: 0.9375rem;
-    margin-bottom: 32px;
-    ;
-}
-
-.omrs-input-underlined:not(.omrs-input-danger)>input:focus+.omrs-input-label,
-.omrs-input-filled:not(.omrs-input-danger)>input:focus+.omrs-input-label {
-    color: var(--omrs-color-interaction);
-}
-
-.omrs-input-underlined:not(.omrs-input-danger)>input:focus,
-.omrs-input-filled:not(.omrs-input-danger)>input:focus {
-    border-color: var(--omrs-color-interaction);
-}
-
-.omrs-input-underlined:not(.omrs-input-danger)>input:focus~svg,
-.omrs-input-filled:not(.omrs-input-danger)>input:focus~svg {
-    fill: var(--omrs-color-ink-high-contrast);
-}
-
-footer {
-    justify-content: flex-end;
-    background-color: aliceblue;
-}
-
-.desenvolvedor {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: solid 1px blue; */
-}
-
-.contatos {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: solid 1px blue; */
-}
+/*# sourceMappingURL=index.css.map */

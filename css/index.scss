@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:wght@900&display=swap');
+
+/* font-family: 'Montserrat', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    padding: 0;
+    margin: 0;
+    background-image: url("../assets/imagem.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+:root {
+    --omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
+    --omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
+    --omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
+    --omrs-color-interaction: #1e4bd1;
+    --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
+    --omrs-color-danger: #b50706;
+    --omrs-color-bg-low-contrast: #eff1f2;
+    --omrs-color-ink-high-contrast: #121212;
+    --omrs-color-bg-high-contrast: #ffffff;
+}
+
+// -----------------------Extensões-----------------------------
+
+.titulo-simples {
+    font-size: 350%;
+    font-family: "Poppins", sans-serif;
+}
+
+.flex-basico {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-hover {
+    opacity: 0.6;
+    background-color: white;
+    color: #121212;
+    animation: button-animation 0.6s;
+    box-shadow: 1px 1px 1px 2px black;
+}
+
+.button-simples {
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+    background-color: #121212;
+    color: white;
+    font-family: "Montserrat", sans-serif;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+// -----------------------animação--------------------------
+
+@keyframes button-animation {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0.6;
+    }
+}
+
+@keyframes border-animation {
+    from {
+        opacity: 0;
+    }
+    to {
+        transform: translateY(50);
+        opacity: 1;
+    }
+}
+
+// --------------------------Páginas----------------------------
+
+.pag1 {
+    width: 100%;
+    header {
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .opcoes_nav {
+                width: 70%;
+                display: flex;
+                justify-content: space-around;
+
+                a {
+                    font-size: 120%;
+                    text-decoration: none;
+                    color: white;
+                }
+
+                .box {
+                    @extend .flex-center;
+                    height: 5vh;
+                    width: 17%;
+                }
+
+                .box:hover {
+                    border-bottom: solid 2px #ffffff;
+                    animation: border-animation 1s;
+                    transform: rotateY(0);
+                }
+            }
+        }
+    }
+
+    .titulo {
+        @extend .flex-basico;
+        height: 100vh;
+
+        .frase {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 80%;
+
+            p {
+                font-size: 775%;
+                font-family: "Poppins", sans-serif;
+                color: whitesmoke;
+                font-weight: bold;
+            }
+
+            .btn_cadastro_login {
+                width: 60%;
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+
+                .pgn1_btn {
+                    @extend .flex-center;
+                    width: 30vh;
+                    height: 8vh;
+                    background-color: black;
+                    border-radius: 4px;
+                    color: aliceblue;
+                    font-size: 200%;
+                    border: none;
+                    cursor: pointer;
+                    font-family: "Montserrat", sans-serif;
+
+                    a {
+                        text-decoration: none;
+                        color: white;
+                    }
+
+                    a:hover {
+                        color: #121212;
+                    }
+                }
+
+                .pgn1_btn:hover {
+                    opacity: 0.6;
+                    background-color: white;
+                    color: #121212;
+                    animation: button-animation 0.6s;
+                }
+            }
+        }
+    }
+}
+
+.pag2 {
+    @extend .flex-center;
+    background-color: aliceblue;
+    height: 80vh;
+    width: 100%;
+
+    .texto {
+        @extend .flex-basico;
+        width: 68%;
+        height: 45vh;
+
+        .titulo {
+            @extend .titulo-simples;
+        }
+
+        .text {
+            margin-top: 3vh;
+            margin-bottom: 3vh;
+            font-size: 190%;
+            text-align: center;
+
+            p {
+                color: rgba(0, 0, 0, 0.672);
+            }
+        }
+
+        .button {
+            width: 20%;
+            height: 30vh;
+
+            button {
+                @extend .button-simples;
+            }
+
+            button:hover {
+                @extend .button-hover;
+            }
+        }
+    }
+}
+
+.pag4 {
+    @extend.flex-center;
+    background-color: aliceblue;
+    height: 115vh;
+
+    .galeria {
+        height: 100%;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .titulo {
+            @extend .titulo-simples;
+        }
+
+        .imagem {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 23% 23% 23% 23%;
+            gap: 1vh;
+            height: 80vh;
+
+            .grid {
+                background-image: url("../assets/abstract-image-of-colored-paper-creating-horizontal-lines.jpg");
+                background-size: cover;
+                width: 100%;
+                height: 90%;
+                box-shadow: 6px 4px 3px rgba(0, 0, 0, 0.226);
+            }
+        }
+
+        .button {
+            width: 20%;
+            height: 8%;
+
+            button {
+                @extend .button-simples;
+            }
+
+            button:hover {
+                @extend .button-hover;
+            }
+        }
+    }
+}
+
+.pag5 {
+    background-color: aliceblue;
+    .avaliacao {
+        @extend .flex-basico;
+        height: 100vh;
+
+        .titulo {
+            @extend .titulo-simples;
+        }
+
+        .caixa {
+            display: flex;
+            justify-content: space-around;
+            width: 60%;
+            gap: 10px;
+        }
+
+        .box {
+            margin: 4vh;
+            display: flex;
+            flex-direction: column;
+            width: 40%;
+            height: 90%;
+            box-shadow: 6px 4px 3px rgba(0, 0, 0, 0.226);
+
+            .image {
+                display: flex;
+                justify-content: center;
+                img {
+                    width: 40%;
+                    height: 70%;
+                    border-radius: 100%;
+                }
+            }
+
+            .nome {
+                margin: 10px;
+                font-size: 180%;
+                display: flex;
+                color: rgba(0, 0, 0, 0.83);
+                justify-content: center;
+                font-family: "Montserrat", sans-serif;
+            }
+
+            .texto {
+                margin: 2vh;
+                text-align: center;
+                color: rgba(0, 0, 0, 0.606);
+                font-family: "Montserrat", sans-serif;
+                font-size: 180%;
+            }
+        }
+    }
+}
+
+.pag6 {
+    background-color: aliceblue;
+    .fale {
+        @extend .flex-basico;
+        height: 60vh;
+
+        .titulo {
+            @extend .titulo-simples;
+        }
+
+        .texto {
+            text-align: center;
+            color: rgba(0, 0, 0, 0.606);
+            margin: 4vh;
+            font-family: "Montserrat", sans-serif;
+            font-size: 160%;
+        }
+
+        .input {
+            width: 50%;
+            height: 70vh;
+
+            form {
+                height: 30vh;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                width: 100%;
+
+                /** END: Non Openmrs CSS **/
+                div.omrs-input-group {
+                    /* margin-bottom: 1.5rem; */
+                    position: relative;
+                    width: 100%;
+                }
+
+                /* Input*/
+                .omrs-input-underlined > input,
+                .omrs-input-filled > input {
+                    border: none;
+                    border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
+                    width: 99.5%;
+                    font-size: 1.0625rem;
+                    line-height: 147.6%;
+                    padding-top: 0.825rem;
+                    padding-bottom: 0.5rem;
+                }
+
+                .omrs-input-underlined > input:focus,
+                .omrs-input-filled > input:focus {
+                    outline: none;
+                }
+
+                .omrs-input-underlined > .omrs-input-label,
+                .omrs-input-filled > .omrs-input-label {
+                    position: absolute;
+                    top: 0.9375rem;
+                    left: 0.875rem;
+                    line-height: 147.6%;
+                    color: var(--omrs-color-ink-medium-contrast);
+                    transition: top 0.2s;
+                }
+
+                .omrs-input-underlined > svg,
+                .omrs-input-filled > svg {
+                    position: absolute;
+                    top: 0.9375rem;
+                    right: 0.875rem;
+                    fill: var(--omrs-color-ink-medium-contrast);
+                }
+
+                .omrs-input-underlined > .omrs-input-helper,
+                .omrs-input-filled > .omrs-input-helper {
+                    font-size: 0.9375rem;
+                    color: var(--omrs-color-ink-medium-contrast);
+                    letter-spacing: 0.0275rem;
+                    margin: 0.125rem 0.875rem;
+                }
+
+                .omrs-input-underlined > input:hover,
+                .omrs-input-filled > input:hover {
+                    background: var(--omrs-color-interaction-minus-two);
+                    border-color: var(--omrs-color-ink-high-contrast);
+                }
+
+                .omrs-input-underlined > input:focus + .omrs-input-label,
+                .omrs-input-underlined > input:valid + .omrs-input-label,
+                .omrs-input-filled > input:focus + .omrs-input-label,
+                .omrs-input-filled > input:valid + .omrs-input-label {
+                    top: 0;
+                    font-size: 0.9375rem;
+                    margin-bottom: 32px;
+                }
+
+                .omrs-input-underlined:not(.omrs-input-danger) > input:focus + .omrs-input-label,
+                .omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label {
+                    color: var(--omrs-color-interaction);
+                }
+
+                .omrs-input-underlined:not(.omrs-input-danger) > input:focus,
+                .omrs-input-filled:not(.omrs-input-danger) > input:focus {
+                    border-color: var(--omrs-color-interaction);
+                }
+
+                .omrs-input-underlined:not(.omrs-input-danger) > input:focus ~ svg,
+                .omrs-input-filled:not(.omrs-input-danger) > input:focus ~ svg {
+                    fill: var(--omrs-color-ink-high-contrast);
+                }
+            }
+        }
+
+        .button {
+            width: 50%;
+            height: 15vh;
+            margin: 2vh;
+
+            button {
+                @extend .button-simples;
+            }
+
+            button:hover {
+                @extend .button-hover;
+            }
+        }
+    }
+}
+
+.pag7 {
+    height: 20vh;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: space-around;
+
+    .imagem {
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+
+    .contatos {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+
+        a {
+            .pag7 .contatos a {
+                font-size: 100%;
+                font-family: "Montserrat", sans-serif;
+            }
+        }
+    }
+}

@@ -1,0 +1,169 @@
+
+* {
+  margin: 0;
+}
+
+body {
+  background-image: url("../assets/drawing-in-notebook.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+:root {
+  --omrs-color-ink-lowest-contrast: rgba(47, 60, 85, 0.18);
+  --omrs-color-ink-low-contrast: rgba(60, 60, 67, 0.3);
+  --omrs-color-ink-medium-contrast: rgba(19, 19, 21, 0.6);
+  --omrs-color-interaction: #444751;
+  --omrs-color-interaction-minus-two: rgba(73, 133, 224, 0.12);
+  --omrs-color-danger: #b50706;
+  --omrs-color-bg-low-contrast: #eff1f2;
+  --omrs-color-ink-high-contrast: #121212;
+  --omrs-color-bg-high-contrast: #ffffff;
+}
+
+.box {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box .banner {
+  background-color: rgb(255, 255, 255);
+  height: 70%;
+  width: 65%;
+  border-radius: 2vh;
+  display: flex;
+  justify-content: center;
+}
+.box .banner .imagem {
+  background-image: url("../assets/creamy-cold-drink-sits-on-a-wooden-table.jpg");
+  background-size: cover;
+  width: 35%;
+  border-radius: 2vh 0 0 2vh;
+}
+.box .banner .imagem p {
+  margin: 5vh;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+}
+.box .banner .input {
+  margin: 4vh;
+  width: 85%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.box .banner .input p {
+  font-size: 180%;
+  font-family: "Montserrat", sans-serif;
+}
+.box .banner .input form {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 80%;
+  margin: 2vh;
+  /* Input*/
+}
+.box .banner .input form div.omrs-input-group {
+  /* margin-bottom: 1.5rem; */
+  position: relative;
+  width: 70%;
+}
+.box .banner .input form .omrs-input-underlined > input,
+.box .banner .input form .omrs-input-filled > input {
+  border: none;
+  border-bottom: 0.125rem solid var(--omrs-color-ink-medium-contrast);
+  width: 100%;
+  font-size: 1.0625rem;
+  /* padding-left: 0.875rem; */
+  line-height: 150.6%;
+  padding-top: 0.825rem;
+  padding-bottom: 0.5rem;
+}
+.box .banner .input form .omrs-input-underlined > input:focus,
+.box .banner .input form .omrs-input-filled > input:focus {
+  outline: none;
+}
+.box .banner .input form .omrs-input-underlined > .omrs-input-label,
+.box .banner .input form .omrs-input-filled > .omrs-input-label {
+  position: absolute;
+  top: 0.9375rem;
+  left: 0.875rem;
+  line-height: 147.6%;
+  color: var(--omrs-color-ink-medium-contrast);
+  transition: top 0.2s;
+}
+.box .banner .input form .omrs-input-underlined > svg,
+.box .banner .input form .omrs-input-filled > svg {
+  position: absolute;
+  top: 0.9375rem;
+  right: 0.875rem;
+  fill: var(--omrs-color-ink-medium-contrast);
+}
+.box .banner .input form .omrs-input-underlined > .omrs-input-helper,
+.box .banner .input form .omrs-input-filled > .omrs-input-helper {
+  font-size: 0.9375rem;
+  color: var(--omrs-color-ink-medium-contrast);
+  letter-spacing: 0.0275rem;
+  margin: 0.125rem 0.875rem;
+}
+.box .banner .input form .omrs-input-underlined > input:hover,
+.box .banner .input form .omrs-input-filled > input:hover {
+  background: var(--omrs-color-interaction-minus-two);
+  border-color: var(--omrs-color-ink-high-contrast);
+}
+.box .banner .input form .omrs-input-underlined > input:focus + .omrs-input-label,
+.box .banner .input form .omrs-input-underlined > input:valid + .omrs-input-label,
+.box .banner .input form .omrs-input-filled > input:focus + .omrs-input-label,
+.box .banner .input form .omrs-input-filled > input:valid + .omrs-input-label {
+  top: 0;
+  font-size: 0.9375rem;
+  margin-bottom: 32px;
+}
+.box .banner .input form .omrs-input-underlined:not(.omrs-input-danger) > input:focus + .omrs-input-label,
+.box .banner .input form .omrs-input-filled:not(.omrs-input-danger) > input:focus + .omrs-input-label {
+  color: var(--omrs-color-interaction);
+}
+.box .banner .input form .omrs-input-underlined:not(.omrs-input-danger) > input:focus,
+.box .banner .input form .omrs-input-filled:not(.omrs-input-danger) > input:focus {
+  border-color: var(--omrs-color-interaction);
+}
+.box .banner .input form .omrs-input-underlined:not(.omrs-input-danger) > input:focus ~ svg,
+.box .banner .input form .omrs-input-filled:not(.omrs-input-danger) > input:focus ~ svg {
+  fill: var(--omrs-color-ink-high-contrast);
+}
+.box .banner .input form .tela {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+}
+.box .banner .input form .tela button {
+  border-radius: 2px;
+  border: none;
+  background-color: #121212;
+  color: aliceblue;
+  width: 40%;
+  height: 5vh;
+  font-size: 140%;
+  font-family: "Montserrat", sans-serif;
+  cursor: pointer;
+}
+.box .banner .input form .tela button:hover {
+  opacity: 0.6;
+  background-color: white;
+  color: #121212;
+  animation: button-animation 0.6s;
+  box-shadow: 1px 1px 1px 2px black;
+}
+.box .banner .input .texto a {
+  color: blue;
+  text-decoration: none;
+}
+.box .banner .input .texto a:hover {
+  color: rgb(41, 35, 35);
+}/*# sourceMappingURL=cadastro.css.map */
